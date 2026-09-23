@@ -1,0 +1,308 @@
+body {
+
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+#logo {
+
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 20vh;
+    background-color: #00918c;
+
+}
+
+
+
+#imagem {
+
+    max-height: 90%;
+    width: auto;
+
+}
+
+
+
+#painelSuperior {
+
+    background-color: #00918c;
+    height: 30vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+
+#titulo {
+
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+
+    margin-top: 2vh;
+
+    text-align: center;
+
+    font-size: 4vh;
+
+}
+
+
+
+#subTitulo {
+
+    font-family: "Open Sans", sans-serif;
+
+    color: #fff;
+
+    font-size: 3vh;
+
+    text-align: center;
+
+    margin-top: 1%;
+
+}
+
+
+
+
+.main {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+
+
+#caixaDeEntrada {
+
+
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+
+
+    display: flex;
+
+    flex-direction: column;
+
+
+    background-color: white;
+
+
+    width: 30%;
+
+
+    gap: 3px;
+
+
+    position: relative;
+
+    z-index: 2;
+
+
+    transform: translateY(-40%);
+
+
+}
+
+
+
+
+#caixaDeEntrada input[type="text"],
+
+#caixaDeEntrada input[type="password"] {
+
+
+    margin-left: 10%;
+
+    width: 80%;
+
+    height: 3vh;
+
+
+}
+
+
+
+#usuario,
+
+#senha {
+
+
+    border-radius: 5px;
+
+    border: 2px solid rgba(128,128,128,0.5);
+
+
+}
+
+
+
+
+#PlUsuario {
+
+
+    padding-top:20px;
+
+    padding-left:60px;
+
+    font-family:"Open Sans", sans-serif;
+
+
+}
+
+
+
+
+#PlSenha {
+
+
+    padding-left:60px;
+
+    padding-top:2%;
+
+    font-family:"Open Sans", sans-serif;
+
+
+}
+
+
+
+
+.botao {
+
+
+    color:white;
+
+}
+
+
+
+
+#botao {
+
+
+    color:white;
+
+
+    margin-top:15px;
+
+
+    font-family:"Open Sans", sans-serif;
+
+
+    align-self:center;
+
+
+    width:35vh;
+
+
+    height:4vh;
+
+
+    border-radius:20px;
+
+
+    background-color:#00918c;
+
+
+    border:none;
+
+
+    cursor:pointer;
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+.campo {
+
+
+    position:relative;
+
+    width:98%;
+
+
+}
+
+
+
+
+.campo input {
+
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    padding:8px;
+
+    padding-right:40px;
+
+
+}
+
+
+
+
+
+#mostrarSenha {
+
+
+    position:absolute;
+
+
+    right:20px;
+
+
+    top:50%;
+
+
+    transform:translateY(-50%);
+
+
+    border:none;
+
+
+    background:transparent;
+
+
+    padding:0;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+#iconeOlho {
+
+
+    width:20px;
+
+    height:20px;
+
+    object-fit:contain;
+
+
+}

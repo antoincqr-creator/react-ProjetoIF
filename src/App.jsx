@@ -1,95 +1,256 @@
-import { useState } from "react";
-import Logo from './assets/LogoIFCEMaracanau.png'
+ import { useState } from "react";
 
-export default function App() {
+import "./assets/Login.css";
 
-  return(
-  <div>
-    <header className="header">    
-      <div className="logo" style={{
-          justifyContent: 'center',
-          display: 'flex',
-          height: '20vh',
-          backgroundColor: '#38A33E'
-        }}>
-       <img src={Logo} alt="logo" style={{
-          height: '230px',
-           width: 'auto'
-        }}/>
-      </div>
-    </header> 
-      
-       <main className="main" style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-       }}>
+import LogoIFCE from "./assets/LogoIFCEMaracanau.png";
+import OlhoFechado from "./assets/Olho-fechado.png";
+import OlhoAberto from "./assets/Olho-aberto.png";
 
-       <div className="painelSuperior" style={{
-            backgroundColor: '#38A33E',
-            height: '30vh',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'
-        }} >
-          <h1 id="titulo" style={{
-            fontFamily: 'sans-serif',
-            height: '30vh',
-            marginTop: '2vh',
-            color: '#fff',
-            textAling: 'center',
-            fontSize: '4vh'
-          }}>
-            Título </h1>
-          <h2 id="subtitulo" style={{
-            fontFamily: "'Open sans' sans-serif",
-            color: "#fff",
-            fontSize: '3vh',
-            textAlign: 'center',
-            marginTop: '1%'
-          }}>
-            Subtítulo </h2>
-        </div>
 
-          <div className="caixaDeEntrada" style={{
-            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.6)',
-            display: 'flex',
-            flexDirection: 'colum',
-            backgroundColor: '#ffffff',
-            width: '30%',
-            height: '20vh',
-            gap: '3px',
-            position: 'relative',
-            zIndex: '2',
-            transform: 'translateY(-40%)'
+function App() {
 
-          }}>
-            <label id="campoEntrada" for="Usuario">
-              <span id="PlUsuario">Usuário</span>
-              <input type="text" placeholder="Digite o nome de seu usuário" id="entradaUsuario" style={{
-                marginLeft: '10%',
-                width: '80%',
-                height: '3vh',
-                alignSelf: 'center'
-              }}></input>
-          </label>
 
-          <label className="campoEntrada" for="senha" style={{
-            marginLeft: '10%',
-            width: '80%',
-            height: '3vh',
-            alignSelf: 'center'
-          }}>
-            <span id="PlSenha">Senha</span>
-            <input type="password" placeholder="Digite sua senha" id="entradaSenha"></input>
-          </label>
+    const [usuario, setUsuario] = useState("");
+    const [senha, setSenha] = useState("");
 
-          </div>
+    const [mostrarSenha, setMostrarSenha] = useState(false);
 
 
 
-      </main>
+    function validarLogin() {
 
-    </div>
-  );
+
+        if (usuario.trim() === "") {
+
+            alert("ERROR: Campo Usuário vazio");
+
+        } 
+        
+        else if (senha.trim() === "") {
+
+            alert("ERROR: Campo senha vazio");
+
+        } 
+        
+        else {
+
+            alert("Login enviado com sucesso!");
+
+        }
+
+
+    }
+
+
+
+
+
+    return (
+
+        <>
+
+
+            <header className="header">
+
+
+                <div id="logo">
+
+
+                    <img
+                        src={LogoIFCE}
+                        alt="Logo IF"
+                        id="imagem"
+                    />
+
+
+                </div>
+
+
+
+
+
+                <div id="painelSuperior">
+
+
+                    <h1 id="titulo">
+                        Sistema de Estágio e Jovem Aprendiz
+                    </h1>
+
+
+
+                    <h2 id="subTitulo">
+                        Digite seu usuário e senha para obter acesso
+                    </h2>
+
+
+
+                </div>
+
+
+
+            </header>
+
+
+
+
+
+
+
+            <main className="main">
+
+
+                <div id="caixaDeEntrada">
+
+
+
+                    <span id="PlUsuario">
+                        Usuário
+                    </span>
+
+
+
+
+                    <div className="campo">
+
+
+                        <input
+                            type="text"
+                            id="usuario"
+                            placeholder="Digite seu nome"
+
+                            value={usuario}
+
+                            onChange={(e) => setUsuario(e.target.value)}
+                        />
+
+
+                    </div>
+
+
+
+
+
+
+                    <span id="PlSenha">
+                        Senha
+                    </span>
+
+
+
+
+
+
+
+                    <div className="campo">
+
+
+
+                        <input
+
+                            type={mostrarSenha ? "text" : "password"}
+
+                            id="senha"
+
+                            placeholder="Digite sua senha"
+
+
+                            value={senha}
+
+                            onChange={(e) => setSenha(e.target.value)}
+
+                        />
+
+
+
+
+
+
+                        <button
+
+                            type="button"
+
+                            id="mostrarSenha"
+
+                            onClick={() => setMostrarSenha(!mostrarSenha)}
+
+                        >
+
+
+
+                            <img
+
+                                src={mostrarSenha ? OlhoAberto : OlhoFechado}
+
+                                id="iconeOlho"
+
+                                alt="Mostrar senha"
+
+                            />
+
+
+
+                        </button>
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <button
+
+                        id="botao"
+
+                        onClick={validarLogin}
+
+                    >
+
+                        Enviar
+
+
+                    </button>
+
+
+
+
+
+
+
+                </div>
+
+
+
+            </main>
+
+
+
+
+
+
+
+            <footer className="footer">
+
+
+            </footer>
+
+
+
+
+        </>
+
+    );
+
+
 }
+
+
+
+export default App;
