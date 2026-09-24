@@ -1,6 +1,6 @@
  import { useState } from "react";
 
-import "./assets/Login.css";
+import "./Login.css";
 
 import LogoIFCE from "./assets/LogoIFCEMaracanau.png";
 import OlhoFechado from "./assets/Olho-fechado.png";
